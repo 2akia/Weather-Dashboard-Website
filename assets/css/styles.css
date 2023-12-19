@@ -1,0 +1,69 @@
+
+.weather-header {
+    background-color: #000087d9;
+    font-weight: 300px;
+    color: white;
+    font-size: 33px;
+    text-align: center;
+}
+
+
+#form-heading {
+    font-weight: 200px;
+    text-align: left;
+}
+
+
+.btn {
+    background-color: blue;
+color: white;
+
+}
+
+.pb-3 {
+align-items: flex-end;
+
+
+}
+
+#city {
+    font-weight: 200px;
+}
+
+#search-form {
+    margin-top: 50px;
+}
+
+.input-group-append {
+    margin-top: 25px;
+   
+}
+
+#five-day {
+    float: right;
+    display: flex;
+    margin-left: auto;
+    
+}
+
+
+.forecastTemp {
+margin-right: 65px;
+
+
+}
+
+.five-Dayforecast {
+    font-weight: 200px;
+    float: right;
+    display: flex;
+    margin-right: 404px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
