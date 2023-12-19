@@ -67,5 +67,5 @@ The tools that have been added in this project:
 
 - [Deployed application]()
 
-- [GitHub repository]()
+- [GitHub repository](https://github.com/2akia/Weather-Dashboard-Website)
 
