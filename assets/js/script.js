@@ -28,7 +28,7 @@ $(document).ready(function () {
 
                 console.log("Updated History:", updatedHistory);
             })
-    
+
     });
 
     form.on("submit", function (event) {
@@ -62,7 +62,7 @@ $(document).ready(function () {
                 updateForecast(selectedData);
 
             })
-    
+
     });
 
 
@@ -76,8 +76,20 @@ function storeHistory(cityName) {
     localStorage.setItem("weatherHistory", JSON.stringify(history));
 
     return history;
-}
+};
 
+function updateToday(data) {
+    let currentDate = dayjs().format("DD/MM/YYYY");
+    $("#today").text(currentDate)
+    $("#city").text(data.name)
+    $("#temp").text("Temp: " + data.main.temp)
+    $("#wind-speed").text("wind: " + data.wind.speed)
+    $("#humidity").text("Humidity: " + data.main.humidity)
+
+    $("#icon").attr("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
+
+
+}
 
 
 
