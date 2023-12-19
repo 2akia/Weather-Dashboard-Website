@@ -70,6 +70,14 @@ $(document).ready(function () {
 });
 
 
+function storeHistory(cityName) {
+    var history = JSON.parse(localStorage.getItem("weatherHistory")) || [];
+    history.push(cityName);
+    localStorage.setItem("weatherHistory", JSON.stringify(history));
+
+    return history;
+}
+
 
 
 
