@@ -2,14 +2,20 @@ $(document).ready(function () {
     let APIKey = "9fe88667db3f40d1fe5520b40a30b766";
     let form = $("#search-form");
     let historyList = $("#history");
-
+ // Event handler for submitting the search form to get current weather
     form.on("submit", function (event) {
         event.preventDefault();
+
+         // Get the trimmed input value from the search input field
         let cityName = $("#search-input").val().trim();
 
         console.log("City Name:", cityName);
 
+// Construct the API URL for current weather
+
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + APIKey;
+
+// Fetch data from the API
 
         fetch(queryURL)
             .then(function (response) {
@@ -18,18 +24,21 @@ $(document).ready(function () {
                 }
                 return response.json();
             })
+            // Log the query URL and data to the console
             .then(function (data) {
                 console.log(queryURL);
                 console.log(data);
 
                 updateToday(data);
-
+// Store the search history and get the updated history
                 let updatedHistory = storeHistory(cityName);
 
                 console.log("Updated History:", updatedHistory);
             })
 
     });
+
+     // Event handler for submitting the search form to get 5-day forecast
 
     form.on("submit", function (event) {
         event.preventDefault();
@@ -67,6 +76,7 @@ $(document).ready(function () {
 
 });
 
+// Function to store the search history in local storage
 
 function storeHistory(cityName) {
     var history = JSON.parse(localStorage.getItem("weatherHistory")) || [];
@@ -75,6 +85,8 @@ function storeHistory(cityName) {
 
     return history;
 }
+
+// Function to update the current weather section in the HTML
 
 function updateToday(data) {
     let currentDate = dayjs().format("DD/MM/YYYY");
@@ -88,11 +100,13 @@ function updateToday(data) {
     $("#icon").attr("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
 
 };
-
+// Function to update the 5-day forecast section in the HTML
 function updateForecast(selectedData) {
     console.log(selectedData);
 
     for (let i = 0; i < selectedData.length; i++) {
+
+         // Create HTML elements for forecast information
 
         let fiveDayforecast = $("<div class='m-2'>").text("5-Day Forecast:")
 
@@ -106,6 +120,8 @@ function updateForecast(selectedData) {
 
         let foreCastIcon = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + selectedData[0].weather[0].icon + "@2x.png");
 
+ // Append forecast information to the forecast div
+ 
         fiveDayforecast.append(forecastDay);
         fiveDayforecast.append(foreCastIcon);
         fiveDayforecast.append(foreCastTemp);
