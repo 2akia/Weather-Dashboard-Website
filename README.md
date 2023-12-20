@@ -10,7 +10,8 @@ Hello!! Welcome ...
 
 
 ## Introduction
-
+We were given a task to create a  weather outlook for multiple cities
+to plan a trip accordingly.
 
 # Installation
 
@@ -20,10 +21,10 @@ Hello!! Welcome ...
 4. Start the application.
 
 
-![Example Screenshot 1]()
-![Example Screenshot 1]()
+![Example Screenshot 1](/screenshots/screenshot%201.png)
+![Example Screenshot 2](/screenshots/screenshot%202.png)
 ![Example Screenshot 3](/screenshots/Screenshot%203.png)
-![Example Screenshot 1]()
+![Example Screenshot 4](/screenshots/screenshot%204.png)
 
 
 # Resources 
